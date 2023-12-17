@@ -1,14 +1,11 @@
 # Lolchess-Crawling
 Lolchess Crawling using python selenium
 
-1.	과제 목적 및 개요
+### Assignment Purpose and Overview
+In this project, I implemented a web crawler that retrieves primary crawling targets by accessing the Lolchess site (https://lolchess.gg/leaderboards?region=global&mode=ranked). Since Global contains complete data for several countries, you can exclude this part and import the Challenger and Grandmaster leaderboards for each of the 16 countries. Ranking, summoner (nickname), tier, LP, win rate, Top 4%, number of games, wins, and Top 4 on the leaderboard were crawled and listed from 1st to 100th on one page, so if additional pages exist, the data is also included. Everyone crawled. At this time, when the page changed, it was saved to a new CSV.
 
-롤체지지 사이트(https://lolchess.gg/leaderboards?region=global&mode=ranked)에 접속하여 주요 크롤링 대상들을 가져오는 웹 크롤러를 구현하였다. 글로벌이 여러 국가들의 전체 데이터를 담고 있기에 해당 부분은 제외하고 16개의 각 국가에 대해서 국가별로 챌린저와 그랜드마스터 순위표를 가져올 수 있다. 순위표에 나와있는 순위, 소환사(닉네임), 티어, LP, 승률, Top4%, 게임 수, 승, Top4 모든 데이터를 크롤링하였고 한 페이지에 1등에서 100등까지 나와있었기에 추가 페이지가 존재하는 경우 해당 데이터도 모두 크롤링하였다. 이 때 페이지가 바뀔 때는 새로운 CSV에 저장하도록 하였다.
-
-2.	주요 기능
-(주요 기능들은 모두 크롤러에 기재해두었다)
-
-* 	웹사이트 입력 기능: 사용자가 원하는 티어 그리고 국가를 입력 값으로 받아 CSV로 페이지 별로 저장하도록 구현했다.
-* 	웹페이지 저장 시 고유한 정의를 통한 분류: 크롤러 코드에서 구분할 것이 티어와 국가 두 가지이었기에, 티어 별로 나누어서 CSV 파일이 저장되도록 구현하였다. 티어 별로 저장하는 것이 추후에 데이터를 사용함에 있어서 더 편리할 것이라 판단했다.
-* 	출력 CSV파일의 이름: 현재 날짜와 시간을 담도록 구성했고, 더 나아가 티어, 국가까지 CSV이름에 포함하도록 하였다. 이때 시간은 반올림하여 두 번째 자리 수까지 나오도록 하였다.
-* 	완료 후 크롤링 결과, 소요 시간 안내: 소요 시간과 크롤링이 출력되어 사용자가 알 수 있도록 구현해주었다. 소요 시간의 경우 크롤링을 시작할 때 바로 측정하여, 한 페이지의 크롤링을 마치면 나오도록 진행하였다.
+### Main functions (all main functions are listed in the crawler)
+Website input function: Implemented to receive the user's desired tier and country as input values and save them for each page as CSV.
+Classification through unique definitions when saving web pages: Since there were two things to distinguish in the crawler code, tier, and country, I implemented a saved CSV file by dividing it by tier. We decided that saving data by tier would be more convenient for later use of data.
+Name of the output CSV file: Configured to contain the current date and time and included tier and country in the CSV name. At this time, the time was rounded to the second digit.
+After completion, information on crawling results and time required: The time required and crawling are displayed so that users can know. In the case of the time required, it was measured immediately when crawling began and was measured once the crawling of one page was completed.
